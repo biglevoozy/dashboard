@@ -231,6 +231,154 @@
             }
           }
         }
+
+        .orders {
+          margin: 40px 0 0 0;
+
+          background-color: $secondary-6;
+
+          border-radius: 4px;
+
+          .header {
+            padding: 16px 27px;
+
+            .buttons {
+              & > input {
+                color: $color-400;
+
+                border-radius: 4px;
+
+                background-color: $neutral-color-800;
+
+                padding: 9px;
+
+                margin: 0 8px 0 0;
+              }
+            }
+          }
+          .table-orders {
+            width: 100%;
+
+            background-color: $secondary-6;
+
+            & tr:nth-child(odd) {
+              background-color: $neutral-color-800;
+            }
+
+            thead > tr:first-child {
+              background-color: transparent;
+            }
+
+            td,
+            th {
+              padding: 16px 27px;
+              text-align: left;
+              vertical-align: middle;
+            }
+
+            .client {
+              display: flex;
+              flex-direction: column;
+
+              .client-name {
+                font-size: 10px;
+              }
+              .client-mail {
+                font-size: 10px;
+                color: $color-400;
+              }
+            }
+
+            .status {
+              padding: 2px 6px;
+
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              border-radius: 4px;
+
+              width: 100px;
+
+              &::before {
+                display: block;
+                content: "";
+
+                width: 4px;
+                height: 4px;
+
+                border-radius: 100%;
+              }
+
+              &.ok {
+                border: 1px solid rgba(5, 193, 104, 0.3);
+
+                color: #05c168;
+                background-color: rgba(5, 193, 104, 0.2);
+
+                &::before {
+                  background-color: #05c168;
+                }
+              }
+
+              &.pending {
+                border: 1px solid rgba(255, 176, 22, 0.3);
+
+                color: #ffb016;
+                background-color: rgba(255, 176, 22, 0.2);
+
+                &::before {
+                  background-color: #ffb016;
+                }
+              }
+              &.canceled {
+                border: 1px solid rgba(255, 90, 101, 0.3);
+
+                color: #ff5a65;
+                background-color: rgba(255, 90, 101, 0.2);
+
+                &::before {
+                  background-color: #ff5a65;
+                }
+              }
+            }
+
+            .custom-checkbox {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+              position: relative;
+
+              label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                border: 1px solid $color-400;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, border-color 0.3s ease;
+              }
+
+              input[type="checkbox"] {
+                display: none;
+              }
+
+              input[type="checkbox"]:checked + label {
+                background-color: $primary-1;
+              }
+
+              input[type="checkbox"]:checked + label::after {
+                content: "✔";
+                position: absolute;
+
+                font-size: 14px;
+                color: white;
+              }
+            }
+          }
+        }
       }
     }
   }
