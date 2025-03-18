@@ -50,8 +50,6 @@ const myBarChart = new Chart(ctxBar, {
           95000, 67000,
         ],
         backgroundColor: "rgba(203, 60, 255, 1)",
-        borderColor: "rgba(203, 60, 255, 1)",
-        borderWidth: 1,
         barThickness: 12,
       },
       {
@@ -61,8 +59,6 @@ const myBarChart = new Chart(ctxBar, {
           62000, 59000,
         ],
         backgroundColor: "rgba(14, 67, 251, 1)",
-        borderColor: "rgba(54, 162, 235, 1)",
-        borderWidth: 1,
         barThickness: 12,
       },
       {
@@ -72,14 +68,13 @@ const myBarChart = new Chart(ctxBar, {
           54000, 41000,
         ],
         backgroundColor: "rgba(0, 194, 255, 1)",
-        borderColor: "rgba(54, 162, 235, 1)",
-        borderWidth: 1,
         barThickness: 12,
       },
     ],
   },
   options: {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         stacked: true,
@@ -153,4 +148,19 @@ new Chart(ctx, {
       },
     },
   ],
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".menu-button");
+  const sidebar = document.querySelector(".sidebar");
+
+  menuButton.addEventListener("click", function () {
+    sidebar.classList.toggle("active");
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!sidebar.contains(event.target) && !menuButton.contains(event.target)) {
+      sidebar.classList.remove("active");
+    }
+  });
 });

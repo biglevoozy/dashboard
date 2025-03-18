@@ -9,6 +9,27 @@
   <body>
     <div id="app">
       <div class="wrapper">
+        <button class="menu-button">
+          <svg
+            width="27"
+            height="27"
+            viewBox="0 0 27 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.55363 0.275879C9.09481 0.275879 8.72287 0.647826 8.72287 1.10665V8.99895H8.72283C3.90521 8.99895 -0.000244141 12.9044 -0.000244141 17.722C-0.000244141 22.5396 3.90521 26.4451 8.72283 26.4451H16.6151C17.074 26.4451 17.4459 26.0731 17.4459 25.6143V17.722H17.4459C22.2636 17.722 26.169 13.8166 26.169 8.99895C26.169 4.18133 22.2636 0.275879 17.4459 0.275879H9.55363ZM17.4459 17.722V9.82971C17.4459 9.37089 17.074 8.99895 16.6151 8.99895H8.72287V16.8913C8.72287 17.3501 9.09481 17.722 9.55363 17.722H17.4459Z"
+              fill="#CB3CFF"
+            />
+            <path
+              d="M9.46002 0.275879C9.0529 0.275879 8.72286 0.605917 8.72286 1.01304L8.72286 8.99895H16.7088C17.1159 8.99895 17.4459 9.32899 17.4459 9.73611L17.4459 17.722C22.2636 17.722 26.169 13.8166 26.169 8.99895C26.169 4.18133 22.2636 0.275879 17.4459 0.275879H9.46002Z"
+              fill="#00C2FF"
+            />
+          </svg>
+        </button>
+
         <aside class="sidebar">
           <div class="initials">
             <svg
@@ -733,7 +754,7 @@
                     </svg>
                   </button>
                 </div>
-                <canvas id="progress-chart" width="341" height="200"></canvas>
+                <canvas id="progress-chart" width="300" height="300"></canvas>
 
                 <div class="legend">
                   <div>
@@ -792,7 +813,10 @@
                     <input type="date" />
                   </div>
                 </div>
-                <canvas id="bar-chart" width="400" height="200"></canvas>
+
+                <div class="canvas-container">
+                  <canvas id="bar-chart"></canvas>
+                </div>
               </div>
             </div>
 
@@ -806,323 +830,325 @@
                   <button class="report">Create order</button>
                 </div>
               </div>
-              <table class="table-orders">
-                <thead>
-                  <tr>
-                    <th>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g filter="url(#filter0_d_4939_57003)">
-                          <rect
-                            x="0.96875"
-                            y="0.379883"
-                            width="12"
-                            height="12"
-                            rx="2"
-                            fill="#CB3CFF"
-                          />
-                          <rect
-                            x="1.26875"
-                            y="0.679883"
-                            width="11.4"
-                            height="11.4"
-                            rx="1.7"
-                            stroke="#CB3CFF"
-                            stroke-width="0.6"
-                          />
-                        </g>
-                        <g clip-path="url(#clip0_4939_57003)">
+              <div class="table-container">
+                <table class="table-orders">
+                  <thead>
+                    <tr>
+                      <th>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 15 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g filter="url(#filter0_d_4939_57003)">
+                            <rect
+                              x="0.96875"
+                              y="0.379883"
+                              width="12"
+                              height="12"
+                              rx="2"
+                              fill="#CB3CFF"
+                            />
+                            <rect
+                              x="1.26875"
+                              y="0.679883"
+                              width="11.4"
+                              height="11.4"
+                              rx="1.7"
+                              stroke="#CB3CFF"
+                              stroke-width="0.6"
+                            />
+                          </g>
+                          <g clip-path="url(#clip0_4939_57003)">
+                            <path
+                              d="M4.96558 6.2959H9.16558"
+                              stroke="white"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </g>
+                          <defs>
+                            <filter
+                              id="filter0_d_4939_57003"
+                              x="0.96875"
+                              y="0.379883"
+                              width="14"
+                              height="14"
+                              filterUnits="userSpaceOnUse"
+                              color-interpolation-filters="sRGB"
+                            >
+                              <feFlood
+                                flood-opacity="0"
+                                result="BackgroundImageFix"
+                              />
+                              <feColorMatrix
+                                in="SourceAlpha"
+                                type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                result="hardAlpha"
+                              />
+                              <feOffset dx="1" dy="1" />
+                              <feGaussianBlur stdDeviation="0.5" />
+                              <feComposite in2="hardAlpha" operator="out" />
+                              <feColorMatrix
+                                type="matrix"
+                                values="0 0 0 0 0.06125 0 0 0 0 0.0969792 0 0 0 0 0.204167 0 0 0 0.4 0"
+                              />
+                              <feBlend
+                                mode="normal"
+                                in2="BackgroundImageFix"
+                                result="effect1_dropShadow_4939_57003"
+                              />
+                              <feBlend
+                                mode="normal"
+                                in="SourceGraphic"
+                                in2="effect1_dropShadow_4939_57003"
+                                result="shape"
+                              />
+                            </filter>
+                            <clipPath id="clip0_4939_57003">
+                              <rect
+                                width="5.6"
+                                height="5.6"
+                                fill="white"
+                                transform="translate(4.26562 3.58008)"
+                              />
+                            </clipPath>
+                          </defs>
+                        </svg>
+
+                        Order
+                      </th>
+                      <th>
+                        <svg
+                          width="11"
+                          height="11"
+                          viewBox="0 0 11 11"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <path
-                            d="M4.96558 6.2959H9.16558"
-                            stroke="white"
+                            d="M1.64282 9.1231C1.64282 7.59135 2.88456 6.34961 4.41632 6.34961H7.52137C9.05313 6.34961 10.2949 7.59135 10.2949 9.1231C10.2949 9.63369 9.88095 10.0476 9.37036 10.0476H2.56732C2.05673 10.0476 1.64282 9.63369 1.64282 9.1231Z"
+                            fill="#AEB9E1"
+                          />
+                          <path
+                            d="M5.97046 5.64501C7.33202 5.64501 8.43578 4.54125 8.43578 3.17968C8.43578 1.81812 7.33202 0.714355 5.97046 0.714355C4.60889 0.714355 3.50513 1.81812 3.50513 3.17968C3.50513 4.54125 4.60889 5.64501 5.97046 5.64501Z"
+                            fill="#AEB9E1"
+                          />
+                        </svg>
+                        Client
+                      </th>
+                      <th>
+                        <svg
+                          width="11"
+                          height="12"
+                          viewBox="0 0 11 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="1.43384"
+                            y="2.25977"
+                            width="9.06956"
+                            height="9.12111"
+                            rx="1"
+                            stroke="#AEB9E1"
+                          />
+                          <path
+                            d="M1.43384 5.30811H10.5034V10.3802C10.5034 10.9325 10.0557 11.3802 9.5034 11.3802H2.43384C1.88155 11.3802 1.43384 10.9325 1.43384 10.3802V5.30811Z"
+                            fill="#AEB9E1"
+                            stroke="#AEB9E1"
+                          />
+                          <path
+                            d="M8.48462 1.38086V3.03454"
+                            stroke="#AEB9E1"
                             stroke-linecap="round"
                             stroke-linejoin="round"
                           />
-                        </g>
-                        <defs>
-                          <filter
-                            id="filter0_d_4939_57003"
-                            x="0.96875"
-                            y="0.379883"
-                            width="14"
-                            height="14"
-                            filterUnits="userSpaceOnUse"
-                            color-interpolation-filters="sRGB"
-                          >
-                            <feFlood
-                              flood-opacity="0"
-                              result="BackgroundImageFix"
-                            />
-                            <feColorMatrix
-                              in="SourceAlpha"
-                              type="matrix"
-                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                              result="hardAlpha"
-                            />
-                            <feOffset dx="1" dy="1" />
-                            <feGaussianBlur stdDeviation="0.5" />
-                            <feComposite in2="hardAlpha" operator="out" />
-                            <feColorMatrix
-                              type="matrix"
-                              values="0 0 0 0 0.06125 0 0 0 0 0.0969792 0 0 0 0 0.204167 0 0 0 0.4 0"
-                            />
-                            <feBlend
-                              mode="normal"
-                              in2="BackgroundImageFix"
-                              result="effect1_dropShadow_4939_57003"
-                            />
-                            <feBlend
-                              mode="normal"
-                              in="SourceGraphic"
-                              in2="effect1_dropShadow_4939_57003"
-                              result="shape"
-                            />
-                          </filter>
-                          <clipPath id="clip0_4939_57003">
-                            <rect
-                              width="5.6"
-                              height="5.6"
-                              fill="white"
-                              transform="translate(4.26562 3.58008)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
+                          <path
+                            d="M3.52368 1.38086V3.03454"
+                            stroke="#AEB9E1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        Date
+                      </th>
+                      <th>
+                        <svg
+                          width="11"
+                          height="11"
+                          viewBox="0 0 11 11"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.1354 0.380859H1.80208C1.58107 0.380859 1.36911 0.468657 1.21283 0.624937C1.05655 0.781217 0.96875 0.993179 0.96875 1.21419V9.54753C0.96875 9.76854 1.05655 9.9805 1.21283 10.1368C1.36911 10.2931 1.58107 10.3809 1.80208 10.3809H10.1354C10.3564 10.3809 10.5684 10.2931 10.7247 10.1368C10.881 9.9805 10.9687 9.76854 10.9687 9.54753V1.21419C10.9687 0.993179 10.881 0.781217 10.7247 0.624937C10.5684 0.468657 10.3564 0.380859 10.1354 0.380859V0.380859ZM8.54687 4.43294L5.49479 7.34961C5.41589 7.42383 5.31145 7.46486 5.20313 7.46419C5.09639 7.4646 4.99368 7.42351 4.91667 7.34961L3.39062 5.89128C3.3483 5.85435 3.31388 5.80924 3.28942 5.75867C3.26497 5.7081 3.251 5.65311 3.24835 5.597C3.24569 5.54089 3.25441 5.48482 3.27398 5.43217C3.29354 5.37951 3.32355 5.33136 3.36221 5.2906C3.40086 5.24984 3.44735 5.21732 3.49889 5.19499C3.55043 5.17265 3.60596 5.16097 3.66213 5.16065C3.7183 5.16032 3.77396 5.17136 3.82575 5.19309C3.87755 5.21482 3.92442 5.2468 3.96354 5.28711L5.20313 6.4694L7.97396 3.82878C8.05497 3.75809 8.16018 3.72146 8.26757 3.72654C8.37497 3.73163 8.47624 3.77802 8.55023 3.85604C8.62421 3.93406 8.66517 4.03765 8.66454 4.14517C8.66392 4.25268 8.62176 4.35579 8.54687 4.43294Z"
+                            fill="#AEB9E1"
+                          />
+                        </svg>
+                        Status
+                      </th>
+                      <th>
+                        <svg
+                          width="10"
+                          height="13"
+                          viewBox="0 0 10 13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4.96935 0.380859C3.71943 0.382277 2.52111 0.879434 1.63728 1.76326C0.753457 2.64709 0.256301 3.84541 0.254883 5.09533C0.254883 9.12941 4.54076 12.1777 4.72291 12.3063C4.79591 12.3549 4.88165 12.3809 4.96935 12.3809C5.05705 12.3809 5.14279 12.3549 5.21579 12.3063C5.39794 12.1777 9.68382 9.12941 9.68382 5.09533C9.6824 3.84541 9.18524 2.64709 8.30142 1.76326C7.41759 0.879434 6.21927 0.382277 4.96935 0.380859V0.380859ZM4.96935 3.38098C5.30842 3.38098 5.63987 3.48152 5.92179 3.6699C6.20372 3.85827 6.42345 4.12602 6.55321 4.43927C6.68296 4.75253 6.71691 5.09723 6.65076 5.42978C6.58461 5.76233 6.42134 6.0678 6.18158 6.30756C5.94182 6.54731 5.63636 6.71059 5.3038 6.77674C4.97125 6.84289 4.62655 6.80894 4.3133 6.67918C4.00004 6.54943 3.7323 6.32969 3.54392 6.04777C3.35554 5.76585 3.255 5.43439 3.255 5.09533C3.255 4.64065 3.43562 4.2046 3.75712 3.8831C4.07862 3.56159 4.51468 3.38098 4.96935 3.38098V3.38098Z"
+                            fill="#AEB9E1"
+                          />
+                        </svg>
+                        Country
+                      </th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="custom-checkbox">
+                          <input type="checkbox" id="id1" />
+                          <label for="id1"></label>
+                          <span>#1352</span>
+                        </div>
+                      </td>
 
-                      Order
-                    </th>
-                    <th>
-                      <svg
-                        width="11"
-                        height="11"
-                        viewBox="0 0 11 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.64282 9.1231C1.64282 7.59135 2.88456 6.34961 4.41632 6.34961H7.52137C9.05313 6.34961 10.2949 7.59135 10.2949 9.1231C10.2949 9.63369 9.88095 10.0476 9.37036 10.0476H2.56732C2.05673 10.0476 1.64282 9.63369 1.64282 9.1231Z"
-                          fill="#AEB9E1"
-                        />
-                        <path
-                          d="M5.97046 5.64501C7.33202 5.64501 8.43578 4.54125 8.43578 3.17968C8.43578 1.81812 7.33202 0.714355 5.97046 0.714355C4.60889 0.714355 3.50513 1.81812 3.50513 3.17968C3.50513 4.54125 4.60889 5.64501 5.97046 5.64501Z"
-                          fill="#AEB9E1"
-                        />
-                      </svg>
-                      Client
-                    </th>
-                    <th>
-                      <svg
-                        width="11"
-                        height="12"
-                        viewBox="0 0 11 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          x="1.43384"
-                          y="2.25977"
-                          width="9.06956"
-                          height="9.12111"
-                          rx="1"
-                          stroke="#AEB9E1"
-                        />
-                        <path
-                          d="M1.43384 5.30811H10.5034V10.3802C10.5034 10.9325 10.0557 11.3802 9.5034 11.3802H2.43384C1.88155 11.3802 1.43384 10.9325 1.43384 10.3802V5.30811Z"
-                          fill="#AEB9E1"
-                          stroke="#AEB9E1"
-                        />
-                        <path
-                          d="M8.48462 1.38086V3.03454"
-                          stroke="#AEB9E1"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M3.52368 1.38086V3.03454"
-                          stroke="#AEB9E1"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                      Date
-                    </th>
-                    <th>
-                      <svg
-                        width="11"
-                        height="11"
-                        viewBox="0 0 11 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.1354 0.380859H1.80208C1.58107 0.380859 1.36911 0.468657 1.21283 0.624937C1.05655 0.781217 0.96875 0.993179 0.96875 1.21419V9.54753C0.96875 9.76854 1.05655 9.9805 1.21283 10.1368C1.36911 10.2931 1.58107 10.3809 1.80208 10.3809H10.1354C10.3564 10.3809 10.5684 10.2931 10.7247 10.1368C10.881 9.9805 10.9687 9.76854 10.9687 9.54753V1.21419C10.9687 0.993179 10.881 0.781217 10.7247 0.624937C10.5684 0.468657 10.3564 0.380859 10.1354 0.380859V0.380859ZM8.54687 4.43294L5.49479 7.34961C5.41589 7.42383 5.31145 7.46486 5.20313 7.46419C5.09639 7.4646 4.99368 7.42351 4.91667 7.34961L3.39062 5.89128C3.3483 5.85435 3.31388 5.80924 3.28942 5.75867C3.26497 5.7081 3.251 5.65311 3.24835 5.597C3.24569 5.54089 3.25441 5.48482 3.27398 5.43217C3.29354 5.37951 3.32355 5.33136 3.36221 5.2906C3.40086 5.24984 3.44735 5.21732 3.49889 5.19499C3.55043 5.17265 3.60596 5.16097 3.66213 5.16065C3.7183 5.16032 3.77396 5.17136 3.82575 5.19309C3.87755 5.21482 3.92442 5.2468 3.96354 5.28711L5.20313 6.4694L7.97396 3.82878C8.05497 3.75809 8.16018 3.72146 8.26757 3.72654C8.37497 3.73163 8.47624 3.77802 8.55023 3.85604C8.62421 3.93406 8.66517 4.03765 8.66454 4.14517C8.66392 4.25268 8.62176 4.35579 8.54687 4.43294Z"
-                          fill="#AEB9E1"
-                        />
-                      </svg>
-                      Status
-                    </th>
-                    <th>
-                      <svg
-                        width="10"
-                        height="13"
-                        viewBox="0 0 10 13"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4.96935 0.380859C3.71943 0.382277 2.52111 0.879434 1.63728 1.76326C0.753457 2.64709 0.256301 3.84541 0.254883 5.09533C0.254883 9.12941 4.54076 12.1777 4.72291 12.3063C4.79591 12.3549 4.88165 12.3809 4.96935 12.3809C5.05705 12.3809 5.14279 12.3549 5.21579 12.3063C5.39794 12.1777 9.68382 9.12941 9.68382 5.09533C9.6824 3.84541 9.18524 2.64709 8.30142 1.76326C7.41759 0.879434 6.21927 0.382277 4.96935 0.380859V0.380859ZM4.96935 3.38098C5.30842 3.38098 5.63987 3.48152 5.92179 3.6699C6.20372 3.85827 6.42345 4.12602 6.55321 4.43927C6.68296 4.75253 6.71691 5.09723 6.65076 5.42978C6.58461 5.76233 6.42134 6.0678 6.18158 6.30756C5.94182 6.54731 5.63636 6.71059 5.3038 6.77674C4.97125 6.84289 4.62655 6.80894 4.3133 6.67918C4.00004 6.54943 3.7323 6.32969 3.54392 6.04777C3.35554 5.76585 3.255 5.43439 3.255 5.09533C3.255 4.64065 3.43562 4.2046 3.75712 3.8831C4.07862 3.56159 4.51468 3.38098 4.96935 3.38098V3.38098Z"
-                          fill="#AEB9E1"
-                        />
-                      </svg>
-                      Country
-                    </th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="custom-checkbox">
-                        <input type="checkbox" id="id1" />
-                        <label for="id1"></label>
-                        <span>#1352</span>
-                      </div>
-                    </td>
+                      <td>
+                        <div class="client">
+                          <span class="client-name">John Carter</span>
+                          <span class="client-mail">hello@johncarter.com</span>
+                        </div>
+                      </td>
+                      <td>Jan 30,2024</td>
+                      <td>
+                        <span class="status ok">Delivered</span>
+                      </td>
+                      <td>United States</td>
+                      <td>$ 1,099,24</td>
+                    </tr>
 
-                    <td>
-                      <div class="client">
-                        <span class="client-name">John Carter</span>
-                        <span class="client-mail">hello@johncarter.com</span>
-                      </div>
-                    </td>
-                    <td>Jan 30,2024</td>
-                    <td>
-                      <span class="status ok">Delivered</span>
-                    </td>
-                    <td>United States</td>
-                    <td>$ 1,099,24</td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <div class="custom-checkbox">
+                          <input type="checkbox" id="id2" />
+                          <label for="id2"></label>
+                          <span>#1352</span>
+                        </div>
+                      </td>
 
-                  <tr>
-                    <td>
-                      <div class="custom-checkbox">
-                        <input type="checkbox" id="id2" />
-                        <label for="id2"></label>
-                        <span>#1352</span>
-                      </div>
-                    </td>
+                      <td>
+                        <div class="client">
+                          <span class="client-name">John Carter</span>
+                          <span class="client-mail">hello@johncarter.com</span>
+                        </div>
+                      </td>
+                      <td>Jan 30,2024</td>
+                      <td>
+                        <span class="status ok">Delivered</span>
+                      </td>
+                      <td>United States</td>
+                      <td>$ 1,099,24</td>
+                    </tr>
 
-                    <td>
-                      <div class="client">
-                        <span class="client-name">John Carter</span>
-                        <span class="client-mail">hello@johncarter.com</span>
-                      </div>
-                    </td>
-                    <td>Jan 30,2024</td>
-                    <td>
-                      <span class="status ok">Delivered</span>
-                    </td>
-                    <td>United States</td>
-                    <td>$ 1,099,24</td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <div class="custom-checkbox">
+                          <input type="checkbox" id="id4" />
+                          <label for="id4"></label>
+                          <span>#1352</span>
+                        </div>
+                      </td>
 
-                  <tr>
-                    <td>
-                      <div class="custom-checkbox">
-                        <input type="checkbox" id="id4" />
-                        <label for="id4"></label>
-                        <span>#1352</span>
-                      </div>
-                    </td>
+                      <td>
+                        <div class="client">
+                          <span class="client-name">John Carter</span>
+                          <span class="client-mail">hello@johncarter.com</span>
+                        </div>
+                      </td>
+                      <td>Jan 30,2024</td>
+                      <td class="status-cell">
+                        <span class="status canceled">Canceled</span>
+                      </td>
+                      <td>United States</td>
+                      <td>$ 1,099,24</td>
+                    </tr>
 
-                    <td>
-                      <div class="client">
-                        <span class="client-name">John Carter</span>
-                        <span class="client-mail">hello@johncarter.com</span>
-                      </div>
-                    </td>
-                    <td>Jan 30,2024</td>
-                    <td class="status-cell">
-                      <span class="status canceled">Canceled</span>
-                    </td>
-                    <td>United States</td>
-                    <td>$ 1,099,24</td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <div class="custom-checkbox">
+                          <input type="checkbox" id="id5" />
+                          <label for="id5"></label>
+                          <span>#1352</span>
+                        </div>
+                      </td>
 
-                  <tr>
-                    <td>
-                      <div class="custom-checkbox">
-                        <input type="checkbox" id="id5" />
-                        <label for="id5"></label>
-                        <span>#1352</span>
-                      </div>
-                    </td>
+                      <td>
+                        <div class="client">
+                          <span class="client-name">John Carter</span>
+                          <span class="client-mail">hello@johncarter.com</span>
+                        </div>
+                      </td>
+                      <td>Jan 30,2024</td>
+                      <td>
+                        <span class="status pending">Pending</span>
+                      </td>
+                      <td>United States</td>
+                      <td>$ 1,099,24</td>
+                    </tr>
 
-                    <td>
-                      <div class="client">
-                        <span class="client-name">John Carter</span>
-                        <span class="client-mail">hello@johncarter.com</span>
-                      </div>
-                    </td>
-                    <td>Jan 30,2024</td>
-                    <td>
-                      <span class="status pending">Pending</span>
-                    </td>
-                    <td>United States</td>
-                    <td>$ 1,099,24</td>
-                  </tr>
+                    <tr>
+                      <td>
+                        <div class="custom-checkbox">
+                          <label>
+                            <input type="checkbox" />
+                          </label>
+                          <span>#1352</span>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="client">
+                          <span class="client-name">John Carter</span>
+                          <span class="client-mail">hello@johncarter.com</span>
+                        </div>
+                      </td>
+                      <td>Jan 30,2024</td>
+                      <td>
+                        <span class="status ok">Delivered</span>
+                      </td>
+                      <td>United States</td>
+                      <td>$ 1,099,24</td>
+                    </tr>
 
-                  <tr>
-                    <td>
-                      <div class="custom-checkbox">
-                        <label>
-                          <input type="checkbox" />
-                        </label>
-                        <span>#1352</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="client">
-                        <span class="client-name">John Carter</span>
-                        <span class="client-mail">hello@johncarter.com</span>
-                      </div>
-                    </td>
-                    <td>Jan 30,2024</td>
-                    <td>
-                      <span class="status ok">Delivered</span>
-                    </td>
-                    <td>United States</td>
-                    <td>$ 1,099,24</td>
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <div class="custom-checkbox">
-                        <input type="checkbox" id="id6" />
-                        <label for="id6"></label>
-                        <span>#1352</span>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="client">
-                        <span class="client-name">John Carter</span>
-                        <span class="client-mail">hello@johncarter.com</span>
-                      </div>
-                    </td>
-                    <td>Jan 30,2024</td>
-                    <td>
-                      <span class="status ok">Delivered</span>
-                    </td>
-                    <td>United States</td>
-                    <td>$ 1,099,24</td>
-                  </tr>
-                </tbody>
-              </table>
+                    <tr>
+                      <td>
+                        <div class="custom-checkbox">
+                          <input type="checkbox" id="id6" />
+                          <label for="id6"></label>
+                          <span>#1352</span>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="client">
+                          <span class="client-name">John Carter</span>
+                          <span class="client-mail">hello@johncarter.com</span>
+                        </div>
+                      </td>
+                      <td>Jan 30,2024</td>
+                      <td>
+                        <span class="status ok">Delivered</span>
+                      </td>
+                      <td>United States</td>
+                      <td>$ 1,099,24</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </main>
