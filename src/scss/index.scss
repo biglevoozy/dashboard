@@ -232,6 +232,187 @@
           }
         }
 
+        .charts {
+          display: flex;
+          gap: 30px;
+
+          margin: 30px 0 0 0;
+
+          .progress-chart {
+            background-color: $neutral-color-800;
+            width: 341px;
+
+            padding: 28px;
+
+            .title {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              margin: 0 0 24px 0;
+
+              .data {
+                background-color: $color-800;
+                padding: 8px;
+
+                margin: 0 12px 0 0;
+
+                border-radius: 4px;
+              }
+            }
+
+            .legend {
+              display: flex;
+              flex-direction: column;
+
+              margin: 24px 0 0 0;
+
+              & > div {
+                display: flex;
+                justify-content: space-between;
+
+                & span {
+                  font-size: 14px;
+                  color: $color-400;
+
+                  margin: 0 0 14px 0;
+
+                  &::before {
+                    display: inline-block;
+                    vertical-align: middle;
+                    content: "";
+
+                    width: 4px;
+                    height: 4px;
+
+                    margin: 0 4px 0 0;
+
+                    background-color: $color-400;
+
+                    border-radius: 100%;
+                  }
+
+                  &.clients::before {
+                    background-color: $primary-1;
+                  }
+
+                  &.subs::before {
+                    background-color: rgba(14, 67, 251, 1);
+                  }
+
+                  &.cust::before {
+                    background-color: rgba(0, 194, 255, 1);
+                  }
+                }
+              }
+            }
+          }
+
+          .bar-chart {
+            width: 100%;
+
+            background-color: $neutral-color-800;
+
+            padding: 28px;
+
+            .header {
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+              gap: 10px;
+
+              padding: 0 0 30px 0;
+
+              .title {
+                h3 {
+                  font-size: 20px;
+                  color: $color-400;
+
+                  margin: 0 0 10px 0;
+                }
+              }
+
+              .legend {
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .stat {
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+
+                  .stat-number {
+                    font-size: 24px;
+                    font-weight: 600;
+                  }
+
+                  .stat-perc {
+                    padding: 2px 4px;
+
+                    border-radius: 4px;
+
+                    &.up {
+                      color: #05c168;
+                      background-color: rgba(5, 193, 104, 0.2);
+                    }
+
+                    &.down {
+                      color: #ff5a65;
+                      background-color: rgba(255, 90, 101, 0.2);
+                    }
+                  }
+                }
+
+                & > span {
+                  font-size: 14px;
+                  color: $color-400;
+
+                  &::before {
+                    display: inline-block;
+                    vertical-align: middle;
+                    content: "";
+
+                    width: 4px;
+                    height: 4px;
+
+                    margin: 0 4px 0 0;
+
+                    background-color: $color-400;
+
+                    border-radius: 100%;
+                  }
+
+                  &.clients::before {
+                    background-color: $primary-1;
+                  }
+
+                  &.subs::before {
+                    background-color: rgba(14, 67, 251, 1);
+                  }
+
+                  &.cust::before {
+                    background-color: rgba(0, 194, 255, 1);
+                  }
+                }
+
+                & input[type="date"] {
+                  color: $color-400;
+
+                  border-radius: 4px;
+
+                  background-color: $color-800;
+
+                  padding: 9px;
+                  margin: 0 8px 0 0;
+                }
+              }
+            }
+          }
+        }
+
         .orders {
           margin: 40px 0 0 0;
 
@@ -281,7 +462,7 @@
               flex-direction: column;
 
               .client-name {
-                font-size: 10px;
+                font-size: 14px;
               }
               .client-mail {
                 font-size: 10px;
