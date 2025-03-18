@@ -1,0 +1,19 @@
+@use "../base/variables" as *;
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+
+  line-height: 150%;
+
+  background-color: $color-800;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
