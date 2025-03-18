@@ -7,6 +7,10 @@ body {
   line-height: 150%;
 
   background-color: $color-800;
+
+  * {
+    color: $color-100;
+  }
 }
 
 img {

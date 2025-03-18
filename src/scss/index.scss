@@ -1,0 +1,129 @@
+@use "../assets/base/variables" as *;
+
+.sidebar {
+  width: 300px;
+
+  padding: 40px 28px;
+
+  .initials {
+    display: flex;
+    gap: 8px;
+
+    .name {
+      font-size: 20px;
+    }
+  }
+
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+
+    background-color: $secondary-1;
+
+    border: 1px solid $secondary-2;
+    border-radius: 4px;
+
+    margin: 40px 0 0 0;
+
+    padding: 14px;
+
+    .search {
+      background-color: transparent;
+
+      margin-left: 8px;
+    }
+  }
+
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    margin: 30px 0 0 0;
+
+    border-bottom: 1px solid $color-600;
+
+    padding: 0 0 21px 0;
+
+    .menu-item {
+      padding: 14px;
+
+      transition: transform 0.3s ease;
+      cursor: pointer;
+
+      .menu-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > div {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          & span {
+            color: $color-400;
+          }
+        }
+
+        .account {
+          display: flex;
+          flex-direction: column;
+
+          .account-name {
+            color: $color-100;
+            font-weight: 500;
+          }
+
+          .account-settings {
+            font-size: 12px;
+          }
+        }
+
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+
+      .submenu-list {
+        margin: 8px 0 0 0;
+
+        .submenu-item {
+          padding: 14px 0 14px 14px;
+
+          color: $color-400;
+
+          &.active {
+            color: $color-100;
+
+            background-color: $neutral-color-800;
+
+            border-radius: 4px;
+
+            border-left: 4px solid $primary-1;
+          }
+        }
+      }
+
+      &.active {
+        .menu-name {
+          & > div {
+            & span {
+              color: $primary-1;
+            }
+          }
+
+          & > svg {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
